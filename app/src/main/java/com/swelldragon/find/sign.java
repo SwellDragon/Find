@@ -10,8 +10,6 @@ import android.view.WindowManager;
 import android.widget.Button;
 
 public class sign extends AppCompatActivity {
-///hhhdsfhsafhsajfjkaldjflksa
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
