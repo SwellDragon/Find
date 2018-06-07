@@ -77,7 +77,7 @@ class ViewPagerAdapter extends FragmentPagerAdapter {
 
 }
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity  {
     private ViewPager viewPager;
     private TextView mTextMessage;
     private MenuItem menuItem;
@@ -154,10 +154,13 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
+
         adapter.addFragment(BaseFragment.newInstance("新闻"));
         adapter.addFragment(BaseFragment.newInstance("图书"));
         adapter.addFragment(BaseFragment.newInstance("发现"));
-        adapter.addFragment(BaseFragment.newInstance("更多"));
+//        adapter.addFragment(BaseFragment.newInstance("更多"));
+        adapter.addFragment(new MeFragment());
+
         viewPager.setAdapter(adapter);
     }
 
