@@ -89,19 +89,19 @@ public class MainActivity extends AppCompatActivity  {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    viewPager.setCurrentItem(0);
+                    viewPager.setCurrentItem(0,false);
                     mTextMessage.setText(R.string.title_home);
                     return true;
                 case R.id.navigation_dashboard:
-                    viewPager.setCurrentItem(1);
+                    viewPager.setCurrentItem(1,false);
                     mTextMessage.setText(R.string.title_dashboard);
                     return true;
                 case R.id.navigation_notifications:
-                    viewPager.setCurrentItem(2);
+                    viewPager.setCurrentItem(2,false);
                     mTextMessage.setText(R.string.title_notifications);
                     return true;
                 case R.id.aaa:
-                    viewPager.setCurrentItem(3);
+                    viewPager.setCurrentItem(3,false);
                     mTextMessage.setText("我");
                     return true;
             }
@@ -155,8 +155,8 @@ public class MainActivity extends AppCompatActivity  {
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
 
-        adapter.addFragment(BaseFragment.newInstance("新闻"));
-        adapter.addFragment(BaseFragment.newInstance("图书"));
+        adapter.addFragment(new MyCollegeFragment());
+        adapter.addFragment(new SaleFragment());
         adapter.addFragment(BaseFragment.newInstance("发现"));
 //        adapter.addFragment(BaseFragment.newInstance("更多"));
         adapter.addFragment(new MeFragment());
