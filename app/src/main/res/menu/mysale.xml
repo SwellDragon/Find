@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/mysale_join"
+        android:title="已参拍"
+    ></item>
+    <item
+        android:id="@+id/mysale_finish"
+        android:title="已结束"
+        ></item>
+    <item
+        android:id="@+id/mysale_order"
+        android:title="订单"
+        ></item>
+</menu>

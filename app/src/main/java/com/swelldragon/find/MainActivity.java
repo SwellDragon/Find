@@ -113,9 +113,9 @@ public class MainActivity extends AppCompatActivity  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //设置为无标题栏
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        //设置为全屏模式
-        //hhhhh
+//        requestWindowFeature(Window.FEATURE_NO_TITLE);
+//        //设置为全屏模式
+//        //hhhhh
         setContentView(R.layout.activity_main);
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {

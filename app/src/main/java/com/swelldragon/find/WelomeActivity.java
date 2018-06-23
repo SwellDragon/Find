@@ -1,21 +1,16 @@
 package com.swelldragon.find;
 
 import android.content.Intent;
-import android.net.wifi.aware.DiscoverySession;
 import android.os.Message;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.ProgressBar;
 import android.os.Handler;
 import java.util.Timer;
 import java.util.TimerTask;
-
-import java.util.logging.LogRecord;
 
 public class WelomeActivity extends AppCompatActivity {
     private Timer mTimer;
@@ -59,7 +54,7 @@ public class WelomeActivity extends AppCompatActivity {
                 load.setProgress(i);
             }
             else if(i==101){
-                Intent intent = new Intent(WelomeActivity.this,sign.class);
+                Intent intent = new Intent(WelomeActivity.this,SignActivity.class);
                 startActivity(intent);
                 finish();
                 i++;

@@ -15,5 +15,7 @@ public class Sale_List_Adapter extends BaseQuickAdapter<Sale_List_Object, BaseVi
         helper.setText(R.id.price,Double.toString(item.getPrice()));
         helper.setText(R.id.deadline,item.getDeadline());
         helper.setImageResource(R.id.sale_photo,item.getPhoto());
+        helper.addOnClickListener(R.id.sale_photo);
+        helper.addOnClickListener(R.id.name);
     }
 }

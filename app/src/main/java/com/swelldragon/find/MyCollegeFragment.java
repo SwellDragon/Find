@@ -13,11 +13,11 @@ import java.util.List;
 
 
 public class MyCollegeFragment extends Fragment {
-//    Integer[] images={R.drawable.banner1,R.drawable.banner2,R.drawable.banner3};
     public static List<Integer> images=new ArrayList<>();
     Banner banner;
     public MyCollegeFragment(){
         super();
+        images.clear();
         images.add(R.drawable.banner1);
         images.add(R.drawable.banner2);
         images.add(R.drawable.banner3);
