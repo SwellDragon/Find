@@ -24,6 +24,8 @@ import android.widget.Toast;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 
+import org.litepal.LitePal;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -51,27 +53,53 @@ public class SaleFragment extends Fragment {
     public SaleFragment() {
         // Required empty public constructor
         super();
-        init();
+        if(LitePal.count(Sale_List_Object.class)==0){
+            init();
+        }
+
     }
 
     public void init(){
+        LitePal.deleteAll(Sale_List_Object.class);
         Time time = new Time();
         time.setToNow();
+        String ot = time.format("%Y-%m-%d %H:%M:%S");
         time.year++;
         String st = time.format("%Y-%m-%d %H:%M:%S");
-        sale_list_object = new Sale_List_Object("你若盛开，清风自来",12,st,R.drawable.book1);
-        saledata.add(sale_list_object);
-        sale_list_object = new Sale_List_Object("活着",15,st,R.drawable.book2);
-        saledata.add(sale_list_object);
-        sale_list_object = new Sale_List_Object("努力到自己无能为力",13,st,R.drawable.book3);
-        saledata.add(sale_list_object);
-        sale_list_object = new Sale_List_Object("自卑与超越",12,st,R.drawable.book4);
-        saledata.add(sale_list_object);
-        sale_list_object = new Sale_List_Object("舍与得",12,st,R.drawable.book5);
-        saledata.add(sale_list_object);
-        sale_list_object = new Sale_List_Object("18岁后的经济学",12,st,R.drawable.book6);
-        saledata.add(sale_list_object);
+        sale_list_object = new Sale_List_Object("你若盛开，清风自来",12,st,R.drawable.book1,"正在进行","SwellDragon",1);
+//        saledata.add(sale_list_object);
+        sale_list_object.save();
+        sale_list_object = new Sale_List_Object("活着",15,st,R.drawable.book2,"正在进行","SwellDragon",1);
+//        saledata.add(sale_list_object);
+        sale_list_object.save();
+        sale_list_object = new Sale_List_Object("努力到自己无能为力",13,st,R.drawable.book3,"正在进行","Pt.lang",0);
+//        saledata.add(sale_list_object);
+        sale_list_object.save();
+        sale_list_object = new Sale_List_Object("自卑与超越",12,st,R.drawable.book4,"正在进行","SwellDragon",1);
+//        saledata.add(sale_list_object);
+        sale_list_object.save();
+        sale_list_object = new Sale_List_Object("舍与得",11,st,R.drawable.book5,"正在进行","Pt.lang",1);
+//        saledata.add(sale_list_object);
+        sale_list_object.save();
+        sale_list_object = new Sale_List_Object("18岁后的经济学",14,st,R.drawable.book6,"正在进行","SwellDragon",1);
+//        saledata.add(sale_list_object);
+        sale_list_object.save();
+        sale_list_object = new Sale_List_Object("猫1",888,ot,R.drawable.cat1,"已结束","SwellDragon",1);
+        sale_list_object.save();
+        sale_list_object = new Sale_List_Object("猫2",666,ot,R.drawable.cat2,"已结束","Pt.lang",1);
+        sale_list_object.save();
+        sale_list_object = new Sale_List_Object("耳机1",111,ot,R.drawable.headset1,"已结束","SwellDragon",1);
+        sale_list_object.save();
+        sale_list_object = new Sale_List_Object("锤子1",666,ot,R.drawable.hammer1,"已结束","lang",1);
+        sale_list_object.save();
 
+
+    }
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        saledata = LitePal.where("status = ?","正在进行").find(Sale_List_Object.class);
         sortlist.add("默认排序");
         sortlist.add("热度排序");
 
@@ -81,13 +109,6 @@ public class SaleFragment extends Fragment {
 
         itemlist.add("书");
         itemlist.add("电子产品");
-
-    }
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-
     }
 
     @Override
@@ -110,6 +131,7 @@ public class SaleFragment extends Fragment {
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
                 final MainActivity mainActivity = (MainActivity) getActivity();//从Fragment取得Activity实例
                 Intent intent = new Intent(mainActivity,AuctionActivity.class);
+
                 intent.putExtra("saledata",saledata.get(position));
                 startActivity(intent);
             }

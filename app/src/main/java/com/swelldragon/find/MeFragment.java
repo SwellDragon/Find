@@ -22,12 +22,21 @@ public class MeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_me,null);
-        Button morebottom= (Button)view.findViewById(R.id.me_more);
-        morebottom.setOnClickListener(new View.OnClickListener() {
+        Button morebuttom= (Button)view.findViewById(R.id.me_more);
+        Button mysalebuttom=(Button)view.findViewById(R.id.me_mysale_button) ;
+        morebuttom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 final MainActivity mainActivity = (MainActivity) getActivity();//从Fragment取得Activity实例
                 Intent intent = new Intent(mainActivity,MoreActivity.class);
+                startActivity(intent);
+            }
+        });
+        mysalebuttom.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final MainActivity mainActivity = (MainActivity) getActivity();//从Fragment取得Activity实例
+                Intent intent = new Intent(mainActivity,MysaleActivity.class);
                 startActivity(intent);
             }
         });

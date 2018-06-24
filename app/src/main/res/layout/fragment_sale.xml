@@ -103,6 +103,7 @@
         android:layout_marginLeft="4dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="8dp"
+        android:background="@null"
         android:iconifiedByDefault="false"
         app:layout_constraintBottom_toBottomOf="@+id/view5"
         app:layout_constraintEnd_toEndOf="parent"

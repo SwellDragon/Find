@@ -32,7 +32,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="TextView"
+        android:text="物品名"
         android:textSize="22sp"
         app:layout_constraintEnd_toStartOf="@+id/share_imageButton"
         app:layout_constraintStart_toStartOf="parent"
@@ -51,12 +51,12 @@
         app:srcCompat="@android:drawable/ic_menu_share" />
 
     <ImageButton
-        android:id="@+id/imageButton3"
+        android:id="@+id/auction_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="10dp"
         android:background="#00ffffff"
         app:layout_constraintStart_toStartOf="@+id/view6"
         app:layout_constraintTop_toTopOf="@+id/view6"
@@ -85,7 +85,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
-        android:text="999"
+        android:text="xxx"
         android:textColor="@android:color/holo_red_dark"
         android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="@+id/textView12"
@@ -108,12 +108,12 @@
         android:id="@+id/textView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
         android:text="结束"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/auction_status" />
+        app:layout_constraintTop_toBottomOf="@+id/auction_highest_bidder" />
 
     <TextView
         android:id="@+id/auction_deadline"
@@ -121,7 +121,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:text="TextView"
+        android:text="xxxxx"
         app:layout_constraintBottom_toBottomOf="@+id/textView13"
         app:layout_constraintEnd_toStartOf="@+id/textView13" />
 
@@ -132,7 +132,8 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
-        android:text="正在进行"
+        android:text="当前状态"
+        android:textColor="#ff4337"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/share_imageButton" />
 
@@ -149,5 +150,26 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="最高出价者"
+        app:layout_constraintEnd_toStartOf="@+id/auction_highest_bidder"
+        app:layout_constraintTop_toTopOf="@+id/auction_highest_bidder" />
+
+    <TextView
+        android:id="@+id/auction_highest_bidder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:text="xxxx"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/auction_status" />
 
 </android.support.constraint.ConstraintLayout>

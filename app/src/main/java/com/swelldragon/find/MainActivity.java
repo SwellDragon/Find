@@ -25,6 +25,8 @@ import android.view.WindowManager;
 import android.widget.TextView;
 
 
+import org.litepal.tablemanager.Connector;
+
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
@@ -126,7 +128,6 @@ public class MainActivity extends AppCompatActivity  {
         mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationViewHelper.disableShiftMode(navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -149,6 +150,7 @@ public class MainActivity extends AppCompatActivity  {
             }
         });
         setupViewPager(viewPager);
+        Connector.getDatabase();
 
     }
 

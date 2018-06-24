@@ -11,6 +11,8 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
+import com.makeramen.roundedimageview.RoundedImageView;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -21,6 +23,7 @@ public class MoreActivity extends AppCompatActivity {
             R.drawable.me_more_common_problem_image,R.drawable.me_more_user_suggest_image,R.drawable.me_more_night_mode_image,R.drawable.headphoto};
     ListView mListView = null;
     ArrayList<Map<String,Object>> mData= new ArrayList<Map<String,Object>>();
+    RoundedImageView more_back_ImageView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -33,6 +36,13 @@ public class MoreActivity extends AppCompatActivity {
         if (actionBar != null) {
             actionBar.hide();
         }
+        more_back_ImageView = (RoundedImageView)findViewById(R.id.more_back_ImageView);
+        more_back_ImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
         mListView = (ListView)findViewById(R.id.me_more_listview);
         int lengh = mListTitle.length;
         for(int i =0; i < lengh; i++) {
